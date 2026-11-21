@@ -27,23 +27,12 @@ header.top nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
 header.top nav a:hover{color:var(--accent)}
 button{font:inherit;cursor:pointer}
 .theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.25rem .8rem;font-size:.85rem}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center;padding:4rem 0 3.5rem}
+.hero{padding:4rem 0 3.5rem}
 h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;margin:0 0 1.2rem;font-weight:800;letter-spacing:-.03em}
-.lead{font-size:1.2rem;max-width:34ch;margin:0 0 1.2rem}
+.lead{font-size:1.25rem;max-width:40ch;margin:0 0 1.2rem}
 .meta{color:var(--muted);margin:0 0 1.6rem}
 .btn{display:inline-block;background:var(--accent);color:var(--paper);text-decoration:none;border-radius:8px;padding:.65rem 1.2rem;font-weight:600}
 .btn.ghost{background:none;color:var(--ink);border:1px solid var(--line);margin-left:.5rem}
-.doc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.2rem 1.3rem;box-shadow:6px 6px 0 var(--line)}
-.doc h2{font-size:1rem;margin:0 0 .2rem}
-.doc p.cap{margin:0 0 1rem;font-size:.9rem;color:var(--muted);line-height:1.5}
-.field{display:flex;justify-content:space-between;gap:1rem;padding:.55rem .6rem;border-bottom:1px dashed var(--line);font-size:.95rem}
-.field span:first-child{color:var(--muted)}
-.field .val{font-family:ui-monospace,Consolas,monospace;border-radius:4px;padding:0 .3rem}
-.field.bad .val{background:var(--flagbg);color:var(--flag);text-decoration:underline wavy}
-.field.ok .val{color:var(--accent)}
-.doc button{margin-top:1rem;width:100%;border:1.5px solid var(--accent);background:none;color:var(--accent);border-radius:8px;padding:.55rem;font-weight:600}
-.doc button:hover{background:var(--accent);color:var(--paper)}
-.status{min-height:1.4rem;margin:.6rem 0 0;font-size:.9rem;color:var(--muted)}
 section{padding:3rem 0;border-top:1px solid var(--line)}
 h2.title{font-size:2rem;margin:0 0 1.5rem;letter-spacing:-.02em}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
@@ -72,7 +61,7 @@ details ul{margin:0 0 1rem;padding-left:1.2rem}
 .time small{display:block;color:var(--muted)}
 .big{font-size:1.25rem;max-width:44ch}
 footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
-@media (max-width:760px){.hero,.cols{grid-template-columns:1fr}header.top nav{display:none}}
+@media (max-width:760px){.cols{grid-template-columns:1fr}header.top nav{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -91,14 +80,6 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
       <p class="lead">I keep digital records accurate, and I’m building on a computer science background to create full-stack web applications and agentic AI workflows.</p>
       <p class="meta">English fluent · German B2 · Tamil native</p>
       <a class="btn" href="#experience">See my experience</a>
-    </div>
-    <div class="doc" aria-live="polite">
-      <h2>What the scanner read</h2>
-      <p class="cap">Scanning software misreads names and numbers. Checking and correcting them is part of my daily work.</p>
-      <div class="field bad" id="f1"><span>Name</span><span class="val">Maria Schnelder</span></div>
-      <div class="field bad" id="f2"><span>Amount</span><span class="val">1.2O8,50 €</span></div>
-      <button type="button" id="fix">Correct the fields</button>
-      <p class="status" id="status">2 fields need checking.</p>
     </div>
   </div>
 </div>
@@ -192,15 +173,6 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
   function label(){tb.textContent=dark()?'Light mode':'Dark mode'}
   tb.onclick=function(){root.dataset.theme=dark()?'light':'dark';label()};label();
 
-  var fixed=false,f1=document.getElementById('f1'),f2=document.getElementById('f2'),b=document.getElementById('fix'),s=document.getElementById('status');
-  b.onclick=function(){
-    fixed=!fixed;
-    f1.className='field '+(fixed?'ok':'bad');f2.className='field '+(fixed?'ok':'bad');
-    f1.lastChild.textContent=fixed?'Maria Schneider':'Maria Schnelder';
-    f2.lastChild.textContent=fixed?'1.208,50 €':'1.2O8,50 €';
-    b.textContent=fixed?'Reset the example':'Correct the fields';
-    s.textContent=fixed?'Both fields corrected and checked.':'2 fields need checking.';
-  };
 
   var fb=document.querySelectorAll('.filters button'),items=document.querySelectorAll('#chips li');
   fb.forEach(function(x){x.onclick=function(){
