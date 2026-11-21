@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saranya Jayakumaran – Digitalisation, data and web development</title>
+<meta name="description" content="Profile of Saranya Jayakumaran: digitalisation and data correction experience, full-stack web development training, and a passion for agentic AI workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Literata:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2F0F8;--surface:#FFFFFF;--ink:#1E1A3C;--muted:#5B5878;--line:#D9D5EA;--accent:#0E7C86;--flag:#C26A12;--flagbg:#FCEBD6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#14122A;--surface:#1D1A3A;--ink:#EDEBFA;--muted:#A9A5C8;--line:#34305A;--accent:#4FD1C5;--flag:#F0A04B;--flagbg:#3A2A1C}}
+:root[data-theme="dark"]{--paper:#14122A;--surface:#1D1A3A;--ink:#EDEBFA;--muted:#A9A5C8;--line:#34305A;--accent:#4FD1C5;--flag:#F0A04B;--flagbg:#3A2A1C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.05rem/1.7 "Literata",Georgia,serif}
+h1,h2,h3,.sans{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+header.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:1rem;min-height:3.4rem}
+header.top .brand{font-weight:800;margin-right:auto;color:var(--ink);text-decoration:none}
+header.top nav{display:flex;gap:1.1rem;flex-wrap:wrap}
+header.top nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+header.top nav a:hover{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.25rem .8rem;font-size:.85rem}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center;padding:4rem 0 3.5rem}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;margin:0 0 1.2rem;font-weight:800;letter-spacing:-.03em}
+.lead{font-size:1.2rem;max-width:34ch;margin:0 0 1.2rem}
+.meta{color:var(--muted);margin:0 0 1.6rem}
+.btn{display:inline-block;background:var(--accent);color:var(--paper);text-decoration:none;border-radius:8px;padding:.65rem 1.2rem;font-weight:600}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line);margin-left:.5rem}
+.doc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.2rem 1.3rem;box-shadow:6px 6px 0 var(--line)}
+.doc h2{font-size:1rem;margin:0 0 .2rem}
+.doc p.cap{margin:0 0 1rem;font-size:.9rem;color:var(--muted);line-height:1.5}
+.field{display:flex;justify-content:space-between;gap:1rem;padding:.55rem .6rem;border-bottom:1px dashed var(--line);font-size:.95rem}
+.field span:first-child{color:var(--muted)}
+.field .val{font-family:ui-monospace,Consolas,monospace;border-radius:4px;padding:0 .3rem}
+.field.bad .val{background:var(--flagbg);color:var(--flag);text-decoration:underline wavy}
+.field.ok .val{color:var(--accent)}
+.doc button{margin-top:1rem;width:100%;border:1.5px solid var(--accent);background:none;color:var(--accent);border-radius:8px;padding:.55rem;font-weight:600}
+.doc button:hover{background:var(--accent);color:var(--paper)}
+.status{min-height:1.4rem;margin:.6rem 0 0;font-size:.9rem;color:var(--muted)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+h2.title{font-size:2rem;margin:0 0 1.5rem;letter-spacing:-.02em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:1rem;padding:0 1.2rem}
+summary{cursor:pointer;padding:1rem 0;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:"Bricolage Grotesque",sans-serif;font-size:1.4rem;color:var(--accent)}
+details[open] summary::after{content:"–"}
+summary h3{margin:0;font-size:1.15rem}
+summary small{display:block;color:var(--muted);font-size:.9rem;font-weight:400}
+details ul{margin:0 0 1rem;padding-left:1.2rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.3rem .9rem;font-size:.9rem}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.chips li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.25rem .7rem;font-size:.95rem}
+.chips li[hidden]{display:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+.card h3{margin:0 0 .3rem;font-size:1.3rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:1rem 0 0}
+.tags li{font-size:.85rem;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 .5rem}
+.time{list-style:none;margin:0;padding:0 0 0 1.2rem;border-left:2px solid var(--line)}
+.time li{margin-bottom:1.2rem;position:relative}
+.time li::before{content:"";position:absolute;left:-1.62rem;top:.55rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent)}
+.time b{font-family:"Bricolage Grotesque",sans-serif}
+.time small{display:block;color:var(--muted)}
+.big{font-size:1.25rem;max-width:44ch}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.hero,.cols{grid-template-columns:1fr}header.top nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand sans" href="#top">Saranya Jayakumaran</a>
+  <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#background">Background</a><a href="#passions">Passions</a></nav>
+  <button class="theme" id="theme" type="button">Dark mode</button>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Saranya Jayakumaran</h1>
+      <p class="lead">I keep digital records accurate, and I’m building on a computer science background to create full-stack web applications and agentic AI workflows.</p>
+      <p class="meta">English fluent · German B2 · Tamil native</p>
+      <a class="btn" href="#experience">See my experience</a>
+    </div>
+    <div class="doc" aria-live="polite">
+      <h2>What the scanner read</h2>
+      <p class="cap">Scanning software misreads names and numbers. Checking and correcting them is part of my daily work.</p>
+      <div class="field bad" id="f1"><span>Name</span><span class="val">Maria Schnelder</span></div>
+      <div class="field bad" id="f2"><span>Amount</span><span class="val">1.2O8,50 €</span></div>
+      <button type="button" id="fix">Correct the fields</button>
+      <p class="status" id="status">2 fields need checking.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<section id="experience">
+  <h2 class="title">Experience</h2>
+  <details open>
+    <summary><div><h3>Digitalisation and data correction assistant (contract)</h3><small>Jan 2026 – Jul 2026</small></div></summary>
+    <ul>
+      <li>Checked and corrected inaccurate information in digital records.</li>
+      <li>Kept data accurate through careful checking and quality control.</li>
+      <li>Organised documents and supported efficient digital workflows.</li>
+    </ul>
+  </details>
+  <details>
+    <summary><div><h3>Digitalisation assistant (mini job)</h3><small>May 2025 – Dec 2025</small></div></summary>
+    <ul>
+      <li>Prepared documents for scanning: sorting, removing staples and arranging pages.</li>
+      <li>Reviewed automatically recognised data in the scanning system.</li>
+      <li>Corrected wrongly recognised data such as names, numbers and fields.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="projects">
+  <h2 class="title">Projects</h2>
+  <div class="card">
+    <h3>Wellness Nest: e-commerce website</h3>
+    <p>A full-stack training project: a working online shop with product inventory, customer information, order data and an integrated online payment process. It taught me how much a smooth shopping experience depends on accurate product information.</p>
+    <ul class="tags"><li>Full-stack</li><li>E-commerce</li><li>Online payments</li><li>Order data</li></ul>
+    <!-- Add your link here, for example: <p><a href="https://github.com/YOUR-NAME/wellness-nest">View the code on GitHub</a></p> -->
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="title">Skills</h2>
+  <div class="filters" role="group" aria-label="Filter skills">
+    <button type="button" aria-pressed="true" data-f="all">All</button>
+    <button type="button" aria-pressed="false" data-f="data">Data and documents</button>
+    <button type="button" aria-pressed="false" data-f="web">Web development</button>
+    <button type="button" aria-pressed="false" data-f="tools">Tools</button>
+    <button type="button" aria-pressed="false" data-f="lang">Languages</button>
+  </div>
+  <ul class="chips" id="chips">
+    <li data-c="data">Data entry and correction</li><li data-c="data">Quality control</li><li data-c="data">Document management</li><li data-c="data">Order and product data</li><li data-c="data">Administrative support</li>
+    <li data-c="web">Full-stack web development</li><li data-c="web">Front end</li><li data-c="web">Back end</li><li data-c="web">E-commerce and online payments</li><li data-c="web">Software testing</li>
+    <li data-c="tools">Microsoft Office</li><li data-c="tools">KIDICAP (document management)</li><li data-c="tools">MS Teams</li><li data-c="tools">Citrix</li><li data-c="tools">Scanzen</li>
+    <li data-c="lang">English: fluent</li><li data-c="lang">German: B2</li><li data-c="lang">Tamil: native</li>
+  </ul>
+</section>
+
+<section id="background">
+  <h2 class="title">Background</h2>
+  <div class="cols">
+    <div>
+      <h3>Education</h3>
+      <ul class="time">
+        <li><b>Diploma in Full-Stack Software Development</b><small>2023 – 2024</small></li>
+        <li><b>Master of Engineering, Computer Science</b><small>2011 – 2013</small></li>
+        <li><b>Bachelor of Engineering, Computer Science</b><small>2008 – 2011</small></li>
+        <li><b>Diploma in Computer Science Engineering</b><small>2005 – 2008</small></li>
+      </ul>
+    </div>
+    <div>
+      <h3>2013 – 2022: learning and creating</h3>
+      <ul class="time">
+        <li><b>Personal YouTube vlog channel</b></li>
+        <li><b>Software Testing Bootcamp</b><small>Udemy · 2022</small></li>
+        <li><b>German language courses</b><small>2022 – 2023</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="passions">
+  <h2 class="title">Passions</h2>
+  <p class="big">I love building web applications, front end and back end, and I’m working towards agentic AI workflows for development.</p>
+  <p>Away from the keyboard: singing, dancing and travel.</p>
+</section>
+
+</div>
+</main>
+
+<footer><div class="wrap">© 2026 Saranya Jayakumaran</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,tb=document.getElementById('theme');
+  function dark(){return root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches}
+  function label(){tb.textContent=dark()?'Light mode':'Dark mode'}
+  tb.onclick=function(){root.dataset.theme=dark()?'light':'dark';label()};label();
+
+  var fixed=false,f1=document.getElementById('f1'),f2=document.getElementById('f2'),b=document.getElementById('fix'),s=document.getElementById('status');
+  b.onclick=function(){
+    fixed=!fixed;
+    f1.className='field '+(fixed?'ok':'bad');f2.className='field '+(fixed?'ok':'bad');
+    f1.lastChild.textContent=fixed?'Maria Schneider':'Maria Schnelder';
+    f2.lastChild.textContent=fixed?'1.208,50 €':'1.2O8,50 €';
+    b.textContent=fixed?'Reset the example':'Correct the fields';
+    s.textContent=fixed?'Both fields corrected and checked.':'2 fields need checking.';
+  };
+
+  var fb=document.querySelectorAll('.filters button'),items=document.querySelectorAll('#chips li');
+  fb.forEach(function(x){x.onclick=function(){
+    fb.forEach(function(y){y.setAttribute('aria-pressed',y===x)});
+    items.forEach(function(li){li.hidden=!(x.dataset.f==='all'||li.dataset.c===x.dataset.f)});
+  }});
+})();
+</script>
+</body>
+</html>
